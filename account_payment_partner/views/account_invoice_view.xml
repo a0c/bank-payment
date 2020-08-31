@@ -13,6 +13,7 @@
         <field name="name">account_payment_partner.invoice_filter</field>
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
         <field name="arch" type="xml">
             <filter string="Status" position="after">
                 <filter string="Payment mode" name="filter_payment_mode" context="{'group_by':'payment_mode_id'}"/>
@@ -25,6 +26,7 @@
         <field name="name">account_payment_partner.invoice_form</field>
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_form" />
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
         <field name="arch" type="xml">
             <field name="partner_bank_id" position="after">
                 <field name="payment_mode_id"
@@ -39,6 +41,7 @@
         <field name="name">account_payment_partner.invoice_supplier_form</field>
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
         <field name="arch" type="xml">
             <field name="partner_bank_id" position="after">
                 <field name="payment_mode_id"
